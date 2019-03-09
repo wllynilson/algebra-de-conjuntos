@@ -2,18 +2,18 @@
 Operações da álgebra de conjuntos
 
 var:  
-inteiro Conjunto  
-inteiro A = {2,3,5,6,8}  
-inteiro B = {6,8}  
-var temp = Uniao(A,B)  
+Conjunto: vetor[0] de inteiro    
+A: vetor[{2,3,5,6,8}] de inteiro    
+B: vetor[{6,8}] de inteiro    
+temp: Uniao(A,B) inteiro    
 
 início  
 função **AdicionarElemento** (conjunto,elemento: inteiro): inteiro  
-se tamanho conjunto == 0 então  
-conjunto recebe elemento  
+se tamanho do conjunto = 0 então  
+conjunto[0] <- elemento  
 retorne conjunto  
 senão  
-inteiro a recebe tamanho conjunto + 1  
+inteiro a <- tamanho conjunto + 1  
 para i=0 até i < tamanho de a faça  
 se i < tamanho do conjunto então  
 a[i] = conjunto[i]  
@@ -29,8 +29,8 @@ fim
 
 inicio  
 função **RemoverElemento** (conjunto,elemento: inteiro): inteiro  
-inteiro a recebe tamanho conjunto - 1  
-boleano passou = false  
+inteiro a <- tamanho conjunto - 1  
+lógico passou = false  
 para i=0 até i < tamanho a faça  
 se conjunto[i] diferente elemento então  
 se diferente passou então  
@@ -48,9 +48,9 @@ fim
 
 
 inicio  
-função **Pertinencia** (conjunto,elemento: inteiro): boleano  
+função **Pertinencia** (conjunto,elemento: inteiro): lógico  
 para i=0 até i < tamanho conjunto faça  
-se conjunto[i] == elemento então  
+se conjunto[i] = elemento então  
 retorne verdadeiro  
 fimse  
 fimpara  
@@ -59,18 +59,18 @@ fim
 
 
 início  
-função **Continencia** (conjuntoA,conjuntoB: inteiro): boleano  
+função **Continencia** (conjuntoA,conjuntoB: inteiro): lógico  
 inteiro cont = 0  
 se tamanho conjuntoA <= tamanho conjuntoB então  
 para i=0 até i < tamanho conjuntoA faça  
 para j=0 até j < tamanho conjuntoB faça  
-se conjuntoB[j] == conjuntoA[i] então  
+se conjuntoB[j] = conjuntoA[i] então  
 cont++  
 fimse  
 fimpara  
 fimpara  
 fimse  
-se cont == tamanho conjuntoA então  
+se cont = tamanho conjuntoA então  
 retorne verdadeiro  
 fimse  
 retorne falso  
@@ -78,18 +78,18 @@ fim
 
 
 início  
-função **Disjuncao** (conjuntoA,conjuntoB: inteiro): boleano  
+função **Disjuncao** (conjuntoA,conjuntoB: inteiro): lógico  
 inteiro cont = 0  
 se tamanho conjuntoA <= tamanho conjuntoB então  
 para i=0 até i < tamanho conjuntoA faça  
 para j=0 até j < tamanho conjuntoB faça  
-se conjuntoB[j] == conjuntoA[i] então  
+se conjuntoB[j] = conjuntoA[i] então  
 cont++  
 fimse  
 fimpara  
 fimpara  
 fimse  
-se cont == 0 então  
+se cont = 0 então  
 retorne verdadeiro  
 fimse  
 retorne falso  
@@ -115,10 +115,10 @@ lista inteiro a
 para i=0 até i < tamanho conjuntoA faça  
 adiciona em a conjuntoA[i]  
 fimpara  
-boleano temp = falso  
+lógico temp = falso  
 para i=0 até i < tamanho conjuntoB faça  
 para j=0 até j < contador de a faça  
-se conjuntoB[i] == a[j] então  
+se conjuntoB[i] = a[j] então  
 tem = verdadeiro  
 pausa  
 fimse  
@@ -135,9 +135,9 @@ início
 função **Diferenca** (A,B: inteiro): lista inteiro  
 lista inteiro listaTemp  
 para i=0 até i < tamanho B faça  
-boleano temp = falso  
+lógico temp = falso  
 para j=0 até j < tamanho A faça  
-se A[j] == B[i] então  
+se A[j] = B[i] então  
 temp = verdadeiro
 fimse  
 fimpara  
@@ -146,9 +146,9 @@ adiciona listaTemp B[i]
 fimse  
 fimpara  
 para i=0 até i < tamanho A faça  
-boleano temp = falso  
+lógico temp = falso  
 para j=0 até j < tamanho B faça  
-se A[i] == B[j] então  
+se A[i] = B[j] então  
 temp = verdadeiro  
 fimse  
 fimpara  
@@ -183,10 +183,10 @@ lista inteiro C
 para i=0 até i < tamanho A faça  
 adiciona C A[i]  
 fimpara  
-boleano temp = falso  
+lógico temp = falso  
 para i=0 até i < tamanho B faça  
 para j=0 até j < contador C faça  
-se B[i] == C[j] então  
+se B[i] = C[j] então  
 remove C j  
 pausa  
 senão  
