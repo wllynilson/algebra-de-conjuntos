@@ -1,18 +1,20 @@
-# algebra-de-conjuntos
-Operações da álgebra de conjuntos
+# Álgebra de Conjuntos
+##### Operações da álgebra de conjuntos
 
 var:  
-Conjunto: vetor[0] de inteiro    
-A: vetor[{2,3,5,6,8}] de inteiro    
-B: vetor[{6,8}] de inteiro    
-temp: Uniao(A,B) inteiro    
+> **Conjunto:** 
+    _vetor de inteiros_    
+    A: `vetor[{2,3,5,6,8}]` de inteiros    
+    B: `vetor[{6,8}]` de inteiros    
+    temp: `Uniao(A,B)` inteiros    
 
-início  
-função **AdicionarElemento** (conjunto,elemento: inteiro): inteiro  
-se tamanho do conjunto = 0 então  
-conjunto[0] <- elemento  
-retorne conjunto  
-senão  
+Início  
+> função **AdicionarElemento** (conjunto, elemento: inteiro): inteiro  
+    `se` o tamanho do conjunto `é igual` a 0 <br/> 
+    `então`  
+        conjunto na primeira posição `recebe` o elemento.  
+        `retorne` o conjunto <br/>
+    `senão`  
 inteiro a <- tamanho conjunto + 1  
 para i=0 até i < tamanho de a faça  
 se i < tamanho do conjunto então  
