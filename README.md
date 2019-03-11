@@ -4,23 +4,23 @@
 var:  
 > **Conjunto:** 
     _vetor de inteiros_    
-    A: `vetor[{2,3,5,6,8}]` de inteiros    
-    B: `vetor[{6,8}]` de inteiros    
+    A: `vetor[2,3,5,6,8]` de inteiros    
+    B: `vetor[6,8]` de inteiros    
     temp: `Uniao(A,B)` inteiros    
 
 Início  
-> função **AdicionarElemento** (conjunto, elemento: inteiro): inteiro  
-    `se` o tamanho do conjunto `é igual` a 0 <br/> 
+> função **AdicionarElemento** (conjunto[], elemento: inteiro): vetor de inteiro  
+    `se` o tamanho do conjunto = 0 <br/> 
     `então`  
-        conjunto na primeira posição `recebe` o elemento.  
+        conjunto na primeira posição <- elemento.  
         `retorne` o conjunto <br/>
     `senão`  
-inteiro a <- tamanho conjunto + 1  
-para i=0 até i < tamanho de a faça  
+vetor de inteiro a <- tamanho do conjunto + 1  
+para i<-0 até i < tamanho de a faça  
 se i < tamanho do conjunto então  
-a[i] = conjunto[i]  
+a[i] <- conjunto[i]  
 senão  
-a[i] = elemento  
+a[i] <- elemento  
 fimse  
 fimpara  
 retorne a  
@@ -30,19 +30,19 @@ fim
 
 
 inicio  
-função **RemoverElemento** (conjunto,elemento: inteiro): inteiro  
-inteiro a <- tamanho conjunto - 1  
-lógico passou = false  
-para i=0 até i < tamanho a faça  
-se conjunto[i] diferente elemento então  
-se diferente passou então  
-a[i] = conjunto[i]  
+função **RemoverElemento** (conjunto[],elemento: inteiro): vetor de inteiro  
+vetor de inteiro a <- tamanho conjunto - 1  
+lógico passou <- false  
+para i<-0 até i < tamanho de a faça  
+se conjunto[i] diferente do elemento então  
+se passou diferente de falso então  
+a[i] <- conjunto[i]  
 senão  
-a[i] = conjunto[i+1]  
+a[i] <- conjunto[i+1]  
 fimse  
 senão  
-a[i] = conjunto[i+1]  
-passou = true  
+a[i] <- conjunto[i+1]  
+passou <- true  
 fimse  
 fimpara  
 retorne a  
@@ -50,8 +50,8 @@ fim
 
 
 inicio  
-função **Pertinencia** (conjunto,elemento: inteiro): lógico  
-para i=0 até i < tamanho conjunto faça  
+função **Pertinencia** (conjunto[],elemento: inteiro): lógico  
+para i<-0 até i < tamanho conjunto faça  
 se conjunto[i] = elemento então  
 retorne verdadeiro  
 fimse  
@@ -61,45 +61,47 @@ fim
 
 
 início  
-função **Continencia** (conjuntoA,conjuntoB: inteiro): lógico  
-inteiro cont = 0  
-se tamanho conjuntoA <= tamanho conjuntoB então  
-para i=0 até i < tamanho conjuntoA faça  
-para j=0 até j < tamanho conjuntoB faça  
+função **Continencia** (conjuntoA,conjuntoB: vetor de inteiro): lógico  
+inteiro cont <- 0  
+se tamanho do conjuntoA <= tamanho do conjuntoB então  
+para i<-0 até i < tamanho conjuntoA faça  
+para j<-0 até j < tamanho conjuntoB faça  
 se conjuntoB[j] = conjuntoA[i] então  
-cont++  
+incrementa cont  
 fimse  
 fimpara  
 fimpara  
 fimse  
-se cont = tamanho conjuntoA então  
+se cont = tamanho do conjuntoA então  
 retorne verdadeiro  
-fimse  
+senão  
 retorne falso  
+fimse  
 fim  
 
 
 início  
-função **Disjuncao** (conjuntoA,conjuntoB: inteiro): lógico  
-inteiro cont = 0  
-se tamanho conjuntoA <= tamanho conjuntoB então  
-para i=0 até i < tamanho conjuntoA faça  
-para j=0 até j < tamanho conjuntoB faça  
+função **Disjuncao** (conjuntoA,conjuntoB: vetor de inteiro): lógico  
+inteiro cont <- 0  
+se tamanho do conjuntoA <= tamanho do conjuntoB então  
+para i<-0 até i < tamanho do conjuntoA faça  
+para j<-0 até j < tamanho do conjuntoB faça  
 se conjuntoB[j] = conjuntoA[i] então  
-cont++  
+incrementa cont  
 fimse  
 fimpara  
 fimpara  
 fimse  
 se cont = 0 então  
 retorne verdadeiro  
-fimse  
+senão  
 retorne falso  
+fimse   
 fim  
 
 
 início  
-função **UniaoDisjunta** (conjuntoA,conjuntoB: UniaoDisjunta): lista caracter  
+função **UniaoDisjunta** (conjuntoA,conjuntoB: classe UniaoDisjunta): lista de caracter  
 lista caracter c  
 para i=0 até i < tamanho conjunto do conjuntoA faça  
 adiciona em c conjunto[i] do conjuntoA + nomeConjunto do conjuntoA  
@@ -112,7 +114,7 @@ fim
 
 
 início  
-função **Uniao** (conjuntoA,conjuntoB: inteiro): lista inteiro  
+função **Uniao** (conjuntoA,conjuntoB: vetor de inteiro): lista de inteiro  
 lista inteiro a  
 para i=0 até i < tamanho conjuntoA faça  
 adiciona em a conjuntoA[i]  
@@ -134,7 +136,7 @@ fim
 
 
 início  
-função **Diferenca** (A,B: inteiro): lista inteiro  
+função **Diferenca** (A,B: vetor de inteiro): lista de inteiro  
 lista inteiro listaTemp  
 para i=0 até i < tamanho B faça  
 lógico temp = falso  
@@ -163,7 +165,7 @@ fim
 
 
 início  
-função **ConjuntoDasPartes** (A: inteiro): lista inteiro  
+função **ConjuntoDasPartes** (A: vetor de inteiro): lista de vetor de inteiro  
 lista inteiro listaTemp  
 para i=0 até i < tamanho A faça  
 adiciona em listaTemp inteiro A[i]  
@@ -180,7 +182,7 @@ fim
 
 
 início  
-função **Complemento** (A,B: inteiro): lista inteiro  
+função **Complemento** (A,B: vetor de inteiro): lista inteiro  
 lista inteiro C  
 para i=0 até i < tamanho A faça  
 adiciona C A[i]  
