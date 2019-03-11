@@ -102,12 +102,12 @@ fim
 
 início  
 função **UniaoDisjunta** (conjuntoA,conjuntoB: classe UniaoDisjunta): lista de caracter  
-lista caracter c  
-para i=0 até i < tamanho conjunto do conjuntoA faça  
-adiciona em c conjunto[i] do conjuntoA + nomeConjunto do conjuntoA  
+c: lista de caracter  
+para i<-0 até i < tamanho do conjuntoA faça  
+adiciona em c conjuntoA[i] mais o nomeConjunto do conjuntoA  
 fimpara  
-para i=0 até tamanho conjunto do conjuntoB faça  
-adiciona em c conjunto[i] do conjuntoB + nomeConjunto do conjuntoB  
+para i<-0 até tamanho do conjuntoB faça  
+adiciona em c conjuntoB[i] mais o nomeConjunto do conjuntoB  
 fimpara  
 retorne c  
 fim  
@@ -115,20 +115,20 @@ fim
 
 início  
 função **Uniao** (conjuntoA,conjuntoB: vetor de inteiro): lista de inteiro  
-lista inteiro a  
-para i=0 até i < tamanho conjuntoA faça  
+a: lista inteiro    
+para i<-0 até i < tamanho do conjuntoA faça  
 adiciona em a conjuntoA[i]  
 fimpara  
-lógico temp = falso  
-para i=0 até i < tamanho conjuntoB faça  
-para j=0 até j < contador de a faça  
+lógico temp <- falso  
+para i<-0 até i < tamanho do conjuntoB faça  
+para j<-0 até j < contador de a faça  
 se conjuntoB[i] = a[j] então  
-tem = verdadeiro  
+temp <- verdadeiro  
 pausa  
 fimse  
 fimpara
-se diferente temp então  
-adiciona a conjuntoB[i]  
+se diferença de temp então  
+adiciona em a conjuntoB[i]  
 fimse  
 fimpara  
 retorne a  
@@ -137,27 +137,27 @@ fim
 
 início  
 função **Diferenca** (A,B: vetor de inteiro): lista de inteiro  
-lista inteiro listaTemp  
-para i=0 até i < tamanho B faça  
-lógico temp = falso  
-para j=0 até j < tamanho A faça  
+listaTemp: lista inteiro    
+para i<-0 até i < tamanho de B faça  
+lógico temp <- falso  
+para j<-0 até j < tamanho de A faça  
 se A[j] = B[i] então  
-temp = verdadeiro
+temp <- verdadeiro
 fimse  
 fimpara  
-se diferente temp então  
-adiciona listaTemp B[i]  
+se diferença temp então  
+adiciona em listaTemp B[i]  
 fimse  
 fimpara  
-para i=0 até i < tamanho A faça  
-lógico temp = falso  
-para j=0 até j < tamanho B faça  
+para i<-0 até i < tamanho de A faça  
+lógico temp <- falso  
+para j<-0 até j < tamanho de B faça  
 se A[i] = B[j] então  
-temp = verdadeiro  
+temp <- verdadeiro  
 fimse  
 fimpara  
-se diferente temp então  
-adiciona listaTemp A[i]  
+se diferença temp então  
+adiciona na listaTemp A[i]  
 fimse  
 fimpara  
 retorne listaTemp  
@@ -166,14 +166,14 @@ fim
 
 início  
 função **ConjuntoDasPartes** (A: vetor de inteiro): lista de vetor de inteiro  
-lista inteiro listaTemp  
-para i=0 até i < tamanho A faça  
-adiciona em listaTemp inteiro A[i]  
+listaTemp: lista de vetor de inteiro    
+para i<-0 até i < tamanho de A faça  
+adiciona na listaTemp A[i]  
 fimpara  
-para i=0 até i < tamanho A faça  
-para j = tamanho A - 1 até j >= 0 faça  
+para i<-0 até i < tamanho de A faça  
+para j <- tamanho A - 1 até j >= 0 faça  
 se A[i] diferente A[j] então  
-adiciona listaTemp inteiro A[i], A[j]  
+adiciona na listaTemp A[i], A[j]  
 fimse  
 fimpara  
 fimpara  
@@ -183,22 +183,22 @@ fim
 
 início  
 função **Complemento** (A,B: vetor de inteiro): lista inteiro  
-lista inteiro C  
-para i=0 até i < tamanho A faça  
-adiciona C A[i]  
+C: lista inteiro    
+para i<-0 até i < tamanho de A faça  
+adiciona em C A[i]  
 fimpara  
-lógico temp = falso  
-para i=0 até i < tamanho B faça  
-para j=0 até j < contador C faça  
+lógico temp <- falso  
+para i<-0 até i < tamanho de B faça  
+para j<-0 até j < contador C faça  
 se B[i] = C[j] então  
-remove C j  
+remove de C j  
 pausa  
 senão  
-temp = verdadeiro  
+temp <- verdadeiro  
 fimse  
 fimpara  
-se diferente temp então  
-adiciona C B[i]  
+se diferença temp então  
+adiciona em C B[i]  
 fimse  
 fimpara  
 retorne C  
