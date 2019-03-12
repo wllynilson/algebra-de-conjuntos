@@ -10,7 +10,7 @@ var:
     temp: `Uniao(A,B)` inteiros    
 
     início  
-    função **AdicionarElemento** (conjunto[], elemento: inteiro): vetor de inteiro  
+    função AdicionarElemento (conjunto[], elemento: inteiro): vetor de inteiro  
         se o tamanho do conjunto = 0 então  
             conjunto na primeira posição <- elemento.  
             retorne o conjunto  
@@ -29,7 +29,7 @@ var:
 
 
     inicio  
-    função **RemoverElemento** (conjunto[],elemento: inteiro): vetor de inteiro  
+    função RemoverElemento (conjunto[],elemento: inteiro): vetor de inteiro  
         vetor de inteiro a <- tamanho conjunto - 1  
         lógico passou <- false  
         para i<-0 até i < tamanho de a faça  
@@ -49,7 +49,7 @@ var:
 
 
     inicio  
-    função **Pertinencia** (conjunto[],elemento: inteiro): lógico  
+    função Pertinencia (conjunto[],elemento: inteiro): lógico  
         para i<-0 até i < tamanho conjunto faça  
             se conjunto[i] = elemento então  
                 retorne verdadeiro  
@@ -60,7 +60,7 @@ var:
 
 
     início  
-    função **Continencia** (conjuntoA,conjuntoB: vetor de inteiro): lógico  
+    função Continencia (conjuntoA,conjuntoB: vetor de inteiro): lógico  
         inteiro cont <- 0  
         se tamanho do conjuntoA <= tamanho do conjuntoB então  
             para i<-0 até i < tamanho conjuntoA faça  
@@ -80,7 +80,7 @@ var:
 
 
     início  
-    função **Disjuncao** (conjuntoA,conjuntoB: vetor de inteiro): lógico  
+    função Disjuncao (conjuntoA,conjuntoB: vetor de inteiro): lógico  
         inteiro cont <- 0  
         se tamanho do conjuntoA <= tamanho do conjuntoB então  
             para i<-0 até i < tamanho do conjuntoA faça  
@@ -100,7 +100,7 @@ var:
 
 
     início  
-    função **UniaoDisjunta** (conjuntoA,conjuntoB: classe UniaoDisjunta): lista de caracter  
+    função UniaoDisjunta (conjuntoA,conjuntoB: classe UniaoDisjunta): lista de caracter  
         c: lista de caracter  
         para i<-0 até i < tamanho do atributo Conjunto do conjuntoA faça  
             adiciona em c conjuntoA.Conjunto[i] + atributo nomeConjunto do conjuntoA  
@@ -113,7 +113,7 @@ var:
 
 
     início  
-    função **Uniao** (conjuntoA,conjuntoB: vetor de inteiro): lista de inteiro  
+    função Uniao (conjuntoA,conjuntoB: vetor de inteiro): lista de inteiro  
         a: lista inteiro    
         para i<-0 até i < tamanho do conjuntoA faça  
             adiciona em a conjuntoA[i]  
@@ -135,7 +135,7 @@ var:
 
 
     início  
-    função **Diferenca** (A,B: vetor de inteiro): lista de inteiro  
+    função Diferenca (A,B: vetor de inteiro): lista de inteiro  
         listaTemp: lista inteiro    
         para i<-0 até i < tamanho de B faça  
             lógico temp <- falso  
@@ -164,7 +164,7 @@ var:
 
 
     início  
-    função **ConjuntoDasPartes** (A: vetor de inteiro): lista de vetor de inteiro  
+    função ConjuntoDasPartes (A: vetor de inteiro): lista de vetor de inteiro  
         listaTemp: lista de vetor de inteiro    
         para i<-0 até i < tamanho de A faça  
             adiciona na listaTemp A[i]  
@@ -181,7 +181,7 @@ var:
 
 
     início  
-    função **Complemento** (A,B: vetor de inteiro): lista inteiro  
+    função Complemento (A,B: vetor de inteiro): lista inteiro  
         C: lista inteiro    
         para i<-0 até i < tamanho de A faça  
             adiciona em C A[i]  
