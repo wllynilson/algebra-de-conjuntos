@@ -1,0 +1,37 @@
+\documentclass[a4paper]{article}
+
+\usepackage[portuguese]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, top=3cm, bottom=2cm, left=3cm, rigth=2, marginparwidth=1.75cm, margin=1.5in]{geometry}
+\usepackage{arevmath}
+\usepackage{graphicx}
+\usepackage{algpseudocode}
+\usepackage[portuguese, ruled, linesnumbered]{algorithm2e}
+
+\begin{document}
+
+  \title{Álgebra de Conjuntos}
+  \author{Ewerton Santiago, Gustavo Siqueira, Wllynilson Carneiro}
+  \date{\today}
+  \maketitle
+  
+  \section{Explicação do Algoritmo}
+
+  \begin{algorithm}[H]
+    \label{alg1}
+    \caption {\textsc{Adição de Elementos}}
+    \Entrada {um número inteiro qualquer}
+    \Saida{}
+    \SetAlgoLined
+      \Inicio {
+        \Se {tamanho de conjunto[] = 0}{
+            conjunto[0] \gets elemento
+        
+        \Senao{
+            conjunto[i] \gets elemento
+            }
+        }
+      }
+    \end{algorithm}
+  \end{document}
