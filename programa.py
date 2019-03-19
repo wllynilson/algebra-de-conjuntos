@@ -2,17 +2,12 @@ import itertools
 
 a = [1, 2, 3, 4]
 b = [5, 4, 6, 7, 1, 2]
-c = []
 
 
 def inserir(x, y):
     if x not in y:
         y.append(x)
-
-
-def remover(x, y):
-    if x in y:
-        y.remove(x)
+    return y
 
 
 def pertinencia(x, y):
@@ -24,17 +19,17 @@ def pertinencia(x, y):
 
 def continencia(x, y):
     for i in x:
-        print(i)
         if i not in y:
             print("Não contém")
         else:
             print("Contém")
 
 
-def uniao():
-    for i in a:
+def uniao(x,y):
+    c = []
+    for i in x:
         inserir(i, c)
-    for j in b:
+    for j in y:
         inserir(j, c)
     print(c)
 
@@ -94,11 +89,13 @@ def uniaoDisjunta(x, y):
     print(z)
 
 
-# uniao()
 # pertinencia(10, c)
 # pertinencia(5, c)
 # continencia(a,b)
+# uniao(a, b)
+# interserccao(a,b)
+# diferenca(a,b)
 # complemento(a,b)
+# conjuntoDasPartes(a, b)
 # produtoCartesiano(a,b)
 # uniaoDisjunta(a,b)
-conjuntoDasPartes(a, b)
