@@ -16,22 +16,19 @@
   \date{\today}
   \maketitle
   
-  \section{Explicação do Algoritmo}
+  \section{Insere}
 
   \begin{algorithm}[H]
     \label{alg1}
-    \caption {\textsc{Adição de Elementos}}
-    \Entrada {um número inteiro qualquer}
+    \caption {\textsc{Insere($A, a$)}}
+    \Entrada {$A$ é um conjunto, $a$ é um valor que será inserido em $A$}
     \Saida{}
     \SetAlgoLined
       \Inicio {
-        \Se {tamanho de conjunto[] = 0}{
-            conjunto[0] \gets elemento
-        
-        \Senao{
-            conjunto[i] \gets elemento
-            }
+        \Se {$a$ \notin $A$}{
+            $N$ \leftarrow $|A|$ \\
+            $A_N_+_1$ \leftarrow a \\
         }
       }
-    \end{algorithm}
+      \end{algorithm}
   \end{document}
