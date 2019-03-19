@@ -31,4 +31,23 @@
         }
       }
       \end{algorithm}
+      
+    \section{União ($A$ e $B$)}
+    
+    \begin{algorithm}[H]
+    \caption{\textsc{Entrada:} $A$ e $B$ são conjuntos}
+    \Entrada{A e B são conjuntos}
+    \Saida{O conjunto resultante da União entre os conjuntos A e B}
+    \Inicio{
+        C \leftarrow \{\}  \\
+        \Para{cada $a \epsilon A$}{ 
+            Insere($C,a$)
+        }
+        \Para{cada $b \epsilon B$}{ 
+            Insere($C,b$)
+        }
+        $retorne $C$ $
+    }
+    \end{algorithm}
+ 
   \end{document}
