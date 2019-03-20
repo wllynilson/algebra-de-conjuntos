@@ -9,164 +9,181 @@
 \usepackage{graphicx}
 \usepackage{algpseudocode}
 
-
 \begin{document}
-
-  \title{Álgebra de Conjuntos}
-  \author{Ewerton Santiago, Gustavo Siqueira, Wllynilson Carneiro}
-  \date{\today}
-  \maketitle
-  
-    \section{Inserção de Elementos}
-    \begin{algorithm}[H]
-    \label{alg1}
-    \caption {\textsc{Inserção($A, a$)}}
-    \Entrada {$A$ é um conjunto, $a$ é um valor que será inserido em $A$}
-    \Saida{}
-    \SetAlgoLined
-      \Inicio {
-        \Se{$a$ \notin $A$}{
-            $N \leftarrow |A|$ \\
-            $A_N_+_1 \leftarrow a$
-        }
-      }
-    \end{algorithm}
-    
-    \section{União}
-    \begin{algorithm}[H]
-    \caption{\textsc{União}($A$ e $B$)}
-    \Entrada{A e B são conjuntos}
-    \Saida{O conjunto resultante da União entre os conjuntos A e B}
-    \Inicio{
-        C \leftarrow \{\}  \\
-        \Para{cada $a \epsilon A$}{ 
-            Insere($C,a$)
-        }
-        \Para{cada $b \epsilon B$}{ 
-            Insere($C,b$)
-        }
-        $retorne $C$ $
-    }
-    \end{algorithm}
-    
-    
-  \section{Pertinência}
-  \begin{algorithm}[H]
-  \caption {\textsc{Pertinência($a$,$A$)}}
-  \Entrada{$a$ é um número e $B$ é um conjunto}
-  \Saida{Valor lógico da pertinência do valor $a$ no conjunto $A$}
-  \SetAlgoLined
-    \Inicio{
-        \Se{$a \in A$}{
-            retorne $VERDADEIRO$
-        }
-        \Se{$a \notin A$}{
-            retorne $FALSO$
-        }
-    }
-  \end{algorithm}
-    
-  
-  \section{Intersecção}
-  \begin{algorithm}[H]
-  \caption {\textsc{Intersecção($A$,$B$)}}
-  \Entrada{$A$ e $B$ são conjuntos}
-  \Saida{O conjunto resultante da intersecção entre os conjuntos $A$ e $B$}
-  \SetAlgoLined
-    \Inicio{
-        $C$ \leftarrow \{\} \\
-        \Para{cada $a \in A$}{
-            \Se{$a \in B$}{
-                $N \leftarrow |C|$ \\
-                $C_N_+_1 \leftarrow a$
-            }
-        }
-        retorne $C$
-    }
-  \end{algorithm}
-  
-  
-  \section{Diferença}
-  \begin{algorithm}[H]
-  \caption {\textsc{Diferença($A$,$B$)}}
-  \Entrada{$A$ e $B$ são conjuntos}
-  \Saida{O conjunto resultante da diferença entre os conjuntos $A$ e $B$}
-  \SetAlgoLined
-    \Inicio{
-        $C$ \leftarrow \{\} \\
-        \Para{cada $a \in A$}{
-            \Se{$a \notin B$}{
-                $N \leftarrow |C|$ \\
-                $C_N_+_1 \leftarrow a$
-            }
-        }
-        retorne $C$
-    }
-  \end{algorithm}
-  
-  
-  \section{Produto Cartesiano}
-  \begin{algorithm}[H]
-  \caption {\textsc{Produto Cartesiano($A$,$B$)}}
-  \Entrada{$A$ e $B$ são conjuntos}
-  \Saida{O produto cartesiano entre os conjuntos $A$ e $B$}
-  \SetAlgoLined
-    \Inicio{
-        \Para{cada $x \in A$}{
-            \Para{cada $y \in B$}{
-                imprima($x,y$)
-            }
-        }
-    }
-  \end{algorithm}
-  
-  
-  \section{Complemento}
-  \begin{algorithm}[H]
-  \caption {\textsc{Complemento($A$,$B$)}}
-  \Entrada{$A$ e $B$ são conjuntos}
-  \Saida{Os conjuntos resultantes do complemento entre os conjuntos $A$ e $B$}
-  \SetAlgoLined
-    \Inicio{
-        $C$ \leftarrow \{\} \\
-        $D$ \leftarrow \{\} \\
-        \Para{cada $a \in A$}{
-            \Se{$a \notin B$}{
-                $N \leftarrow |C|$ \\
-                $C_N_+_1 \leftarrow a$
-            }
-        }
-        retorne $C$ \\
-        \Para{cada $b \in B$}{
-            \Se{$b \notin A$}{
-                $N \leftarrow |D|$ \\
-                $D_N_+_1 \leftarrow b$
-            }
-        }
-        retorne $D$
-    }
-  \end{algorithm}
-  
-  
-  \section{Conjunto das Partes}
-  \begin{algorithm}[H]
-  \caption {\textsc{Conjunto das Partes($A$,$B$)}}
-  \Entrada{$A$ e $B$ são conjuntos}
-  \Saida{O conjunto resultante das partes dos conjuntos $A$ e $B$}
-  \SetAlgoLined
-    \Inicio{
-    }
-  \end{algorithm}
-  
-  
-  \section{União Disjunta}
-  \begin{algorithm}[H]
-  \caption {\textsc{União Disjunta($A$,$B$)}}
-  \Entrada{$A$ e $B$ são conjuntos}
-  \Saida{O conjunto resultante da união disjunta entre os conjuntos $A$ e $B$}
-  \SetAlgoLined
-    \Inicio{
-    }
-  \end{algorithm}
-  
-  \end{document}
+	\title{Operações da Álgebra de Conjuntos}
+	\author{Ewerton Santiago, Gustavo Siqueira, Wllynilson Carneiro}
+	\date{Março de 2019}
+	\maketitle
+	
+	\section{Inserção de Elementos}
+	\begin{algorithm}[H]
+	\caption {\textsc{Inserção($A, a$)}}
+	\Entrada {$A$ é um conjunto, $a$ é um valor que será inserido em $A$}
+	\SetAlgoLined
+	\Inicio {
+		\Se{$a$ \notin $A$}{
+			$N \leftarrow |A|$ \\
+			$A_N_+_1 \leftarrow a$
+		}
+	}
+	\end{algorithm}
+	
+	\section{União}
+	\begin{algorithm}[H]
+	\caption{\textsc{União}($A$ e $B$)}
+	\Entrada{A e B são conjuntos}
+	\Saida{O conjunto resultante da União entre os conjuntos A e B}
+	\Inicio{
+		C \leftarrow \{\} \\
+		\Para{cada $a \in A$}{ 
+			Insere($C,a$)
+		}
+		\Para{cada $b \in B$}{ 
+			Insere($C,b$)
+		}
+		retorne $C$
+	}
+	\end{algorithm}
+	
+	\section{Pertinência}
+	\begin{algorithm}[H]
+	\caption {\textsc{Pertinência($a$,$A$)}}
+	\Entrada{$a$ é um número e $B$ é um conjunto}
+	\Saida{Valor lógico da pertinência do valor $a$ no conjunto $A$}
+	\SetAlgoLined
+	\Inicio{
+		\Se{$a \in A$}{
+			retorne $VERDADEIRO$
+		}
+		\Se{$a \notin A$}{
+			retorne $FALSO$
+		}
+	}
+	\end{algorithm}
+	
+	\section{Continência}
+	\begin{algorithm}[H]
+	\caption {\textsc{Continência($a$,$A$)}}
+	\Entrada{$A$ e $B$ são conjuntos}
+	\Saida{Valor lógico da continência do conjunto $A$ no conjunto $B$}
+	\SetAlgoLined
+	\Inicio{
+		\Se{$A \subset B$}{
+			retorne $VERDADEIRO$
+		}
+		\Se{$A \not\subset B$}{
+			retorne $FALSO$
+		}
+	}
+	\end{algorithm}
+	
+	\section{Intersecção}
+	\begin{algorithm}[H]
+	\caption {\textsc{Intersecção($A$,$B$)}}
+	\Entrada{$A$ e $B$ são conjuntos}
+	\Saida{O conjunto resultante da intersecção entre os conjuntos $A$ e $B$}
+	\SetAlgoLined
+	\Inicio{
+		$C$ \leftarrow \{\} \\
+		\Para{cada $a \in A$}{
+			\Se{$a \in B$}{
+				$N \leftarrow |C|$ \\
+				$C_N_+_1 \leftarrow a$
+			}
+		}
+		retorne $C$
+	}
+	\end{algorithm}
+	
+	\section{Diferença}
+	\begin{algorithm}[H]
+	\caption {\textsc{Diferença($A$,$B$)}}
+	\Entrada{$A$ e $B$ são conjuntos}
+	\Saida{O conjunto resultante da diferença entre os conjuntos $A$ e $B$}
+	\SetAlgoLined
+	\Inicio{
+		$C$ \leftarrow \{\} \\
+		\Para{cada $a \in A$}{
+			\Se{$a \notin B$}{
+				$N \leftarrow |C|$ \\
+				$C_N_+_1 \leftarrow a$
+			}
+		}
+		retorne $C$
+	}
+	\end{algorithm}
+	
+	\section{Produto Cartesiano}
+	\begin{algorithm}[H]
+	\caption {\textsc{Produto Cartesiano($A$,$B$)}}
+	\Entrada{$A$ e $B$ são conjuntos}
+	\Saida{O produto cartesiano entre os conjuntos $A$ e $B$}
+	\SetAlgoLined
+	\Inicio{
+		\Para{cada $x \in A$}{
+			\Para{cada $y \in B$}{
+				imprima($x,y$)
+			}
+		}
+	}
+	\end{algorithm}
+	
+	\section{Complemento}
+	\begin{algorithm}[H]
+	\caption {\textsc{Complemento($A$,$B$)}}
+	\Entrada{$A$ e $B$ são conjuntos}
+	\Saida{Os conjuntos resultantes do complemento entre os conjuntos $A$ e $B$}
+	\SetAlgoLined
+	\Inicio{
+		$C$ \leftarrow \{\} \\
+		$D$ \leftarrow \{\} \\
+		\Para{cada $a \in A$}{
+			\Se{$a \notin B$}{
+				$N \leftarrow |C|$ \\
+				$C_N_+_1 \leftarrow a$
+			}
+		}
+		retorne $C$ \\
+		\Para{cada $b \in B$}{
+			\Se{$b \notin A$}{
+				$N \leftarrow |D|$ \\
+				$D_N_+_1 \leftarrow b$
+			}
+		}
+		retorne $D$
+	}
+	\end{algorithm}
+	
+	\section{Conjunto das Partes}
+	\begin{algorithm}[H]
+	\caption {\textsc{Conjunto das Partes($A$)}}
+	\Entrada{$A$ é um conjunto}
+	\Saida{Os subconjuntos resultantes das partes do conjunto $A$}
+	\SetAlgoLined
+	\Inicio{
+		$P(A)$ \leftarrow \{\} \\
+		\Para{cada $a \in A$}{
+			$P(A) \leftarrow \{a\}$
+		}
+		retorne $P(A)$
+	}
+	\end{algorithm}
+	
+	\section{União Disjunta}
+	\begin{algorithm}[H]
+	\caption {\textsc{União Disjunta($A$,$B$)}}
+	\Entrada{$A$ e $B$ são conjuntos}
+	\Saida{O conjunto resultante da união disjunta entre os conjuntos $A$ e $B$}
+	\SetAlgoLined
+	\Inicio{
+		C \leftarrow \{\}  \\
+		\Para{cada $a \in A$}{ 
+			$C \leftarrow \{(A, a)\}$
+		}
+		\Para{cada $b \in B$}{ 
+			$C \leftarrow \{(B, b)\}$
+		}
+		retorne $C$
+	}
+	\end{algorithm}
+\end{document}
